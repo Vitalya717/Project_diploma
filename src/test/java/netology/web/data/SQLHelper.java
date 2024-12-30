@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class SQLHelper {
     private static final QueryRunner QUERY_RUNNER = new QueryRunner();
 
@@ -21,9 +22,9 @@ public class SQLHelper {
     @SneakyThrows
     public static void cleanDatabase() { // очистить базу дагнных
         var conn = getConn();
-        QUERY_RUNNER.execute(conn, "DELETE FROM credit_request_entity");
-        QUERY_RUNNER.execute(conn, "DELETE FROM order_entity");
-        QUERY_RUNNER.execute(conn, "DELETE FROM payment_entity");
+        QUERY_RUNNER.execute(conn, "TRUNCATE credit_request_entity");
+        QUERY_RUNNER.execute(conn, "TRUNCATE order_entity");
+        QUERY_RUNNER.execute(conn, "TRUNCATE payment_entity");
     }
 
     @SneakyThrows

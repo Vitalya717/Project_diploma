@@ -6,12 +6,16 @@ import netology.web.data.CartInfo;
 import netology.web.data.SQLHelper;
 import netology.web.page.BuyingTourPage;
 import org.junit.jupiter.api.*;
+
 import static com.codeborne.selenide.Selenide.open;
 import static netology.web.data.DataHelper.*;
 import static netology.web.data.Rest.*;
+import static netology.web.data.SQLHelper.cleanDatabase;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BuyPageTest {
+
+    BuyingTourPage BuyingTourPage;
 
     @BeforeAll
     static void setUpAll() {
@@ -23,12 +27,11 @@ public class BuyPageTest {
         SelenideLogger.removeListener("allure");
     }
 
-    BuyingTourPage BuyingTourPage;
-
     @AfterEach
     void tearDown() {
-        SQLHelper.cleanDatabase();
+        cleanDatabase();
     }
+
     @BeforeEach
     void setUp() {
         BuyingTourPage = open("http://localhost:8080", BuyingTourPage.class);

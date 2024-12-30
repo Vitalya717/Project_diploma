@@ -23,7 +23,7 @@ public class BuyCreditPageTest {
         SelenideLogger.removeListener("allure");
     }
 
-    netology.web.page.BuyingTourPage BuyingTourPage;
+    BuyingTourPage BuyingTourPage;
 
     @AfterEach
     void tearDown() {
