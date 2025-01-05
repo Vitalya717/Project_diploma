@@ -7,15 +7,6 @@
 
 3. **[Отчётные документы по итогам автоматизации](https://github.com/Vitalya717/Project_diploma/blob/main/documents/Summary.md)**
 
-## Для запуска веб-приложения необходимы следующие требование:
-- ОС Windows 10, Linux либо MAC
-
-- Установить браузер Google Chrome
-
-- Установить IDE IntelliJ IDEA
-
-- Установить Docker Desktop
-
 ## Замуск веб-приложения по адресу: http://localhost:8080/
 
 **1. Для запуска контейнеров NodeJS, MySQL и PostgreSQL необходимо ввести в терминале команду:**
