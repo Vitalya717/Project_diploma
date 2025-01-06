@@ -19,7 +19,7 @@
 
    *PostgreSQL:*
    > * java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar" ./artifacts/aqa-shop.jar
->    * 
+
 ## Запуск автотестов
 
 **1. Для "MySQL", необходимо открыть новую вкладку терминала и ввести команду:**
