@@ -23,10 +23,10 @@
 ## Запуск автотестов
 
 **1. Для "MySQL", необходимо открыть новую вкладку терминала и ввести команду:**
-> * ./gradlew test "-Dselenide.headless=true -Durlbd=jdbc:mysql://localhost:3306/app" --info
+> * ./gradlew test "-Dselenide.headless=true -Ddb.url=jdbc:mysql://localhost:3306/app" --info
 
 **2. Для "PostgreSQL", необходимо открыть новую вкладку терминала и ввести команду:**
-> * ./gradlew test "-Dselenide.headless=true -Durlbd=jdbc:postgresql://localhost:5432/app" --info
+> * ./gradlew test "-Dselenide.headless=true -Ddb.url=jdbc:postgresql://localhost:5432/app" --info
 
 ## Отчеты автотестирования
 

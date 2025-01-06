@@ -23,61 +23,14 @@ public class Rest {
     private Rest() {
     }
 
-    public static void sendPurchaseRequestWithActiveCard(CartInfo cartInfo) {
-        given()
-                .spec(requestSpec)
-                .body(gson.toJson(cartInfo))
-                .when()
-                .post("/api/v1/pay")
-                .then().log().all()
-                .statusCode(200);
-    }
+    public static void sendPurchaseRequestOnCredit(CartInfo cartInfo, String way, int status) {
 
-    public static void sendCreditRequestWithActiveCard(CartInfo cartInfo) {
         given()
                 .spec(requestSpec)
                 .body(gson.toJson(cartInfo))
                 .when()
-                .post("/api/v1/credit")
+                .post(way)
                 .then().log().all()
-                .statusCode(200);
+                .statusCode(status);
     }
-
-    public static void sendPurchaseRequestWithBlockedCard(CartInfo cartInfo) {
-        given()
-                .spec(requestSpec)
-                .body(gson.toJson(cartInfo))
-                .when()
-                .post("/api/v1/pay")
-                .then().log().all()
-                .statusCode(403);
-    }
-    public static void sendCreditRequestWithBlockedCard(CartInfo cartInfo) {
-        given()
-                .spec(requestSpec)
-                .body(gson.toJson(cartInfo))
-                .when()
-                .post("/api/v1/credit")
-                .then().log().all()
-                .statusCode(403);
-    }
-    public static void sendPurchaseRequestWithActiveBankCardAndInvalidData(CartInfo cartInfo) {
-        given()
-                .spec(requestSpec)
-                .body(gson.toJson(cartInfo))
-                .when()
-                .post("/api/v1/pay")
-                .then().log().all()
-                .statusCode(400);
-    }
-    public static void sendPurchaseRequestCreditWithActiveBankCardAndInvalidData(CartInfo cartInfo) {
-        given()
-                .spec(requestSpec)
-                .body(gson.toJson(cartInfo))
-                .when()
-                .post("/api/v1/credit")
-                .then().log().all()
-                .statusCode(400);
-    }
-
 }

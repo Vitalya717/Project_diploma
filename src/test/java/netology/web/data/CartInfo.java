@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class CartInfo {
-        private String number;
-        private String year;
-        private String month;
-        private String holder;
-        private String cvc;
+    private String number;
+    private String year;
+    private String month;
+    private String holder;
+    private String cvc;
 }

@@ -21,18 +21,13 @@ public class BuyCreditPage {
     private final SelenideElement cvcField = $(byText("CVC/CVV")).parent().$(".input__control");
     private final SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
     private final SelenideElement messageAboutSending = $$(".button").find(exactText("Отправляем запрос в Банк..."));
-
     private final SelenideElement successfulOperation = $(".notification_status_ok"); // успешная операция
     private final SelenideElement refusalTheOperation = $(".notification_status_error"); // отказ в операции
-    private final SelenideElement incorrectCardFormat = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля карты
-    private final SelenideElement incorrectMonthFormat = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля месяц
-    private final SelenideElement nonExistentMonth = $(byText("Неверно указан срок действия карты")).parent().$(".input__sub"); // несуществующий месяц
-    private final SelenideElement incorrectYearFormat = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля год
-    private final SelenideElement lessThanThisYear = $(byText("Истёк срок действия карты")).parent().$(".input__sub"); // меньще текушего года
-    private final SelenideElement fiveYearsMoreThanCurrentYear = $(byText("Неверно указан срок действия карты")).parent().$(".input__sub"); // больше текушего года на пять лет
-    private final SelenideElement incorrectHolderFormat = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля владедец
+    private final SelenideElement incorrectCard = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля
+    private final SelenideElement nonExistent = $(byText("Неверно указан срок действия карты")).parent().$(".input__sub"); // несуществующий месяц либо год
+    private final SelenideElement lessThanThis = $(byText("Истёк срок действия карты")).parent().$(".input__sub"); // меньще текушего года либо месяц
     private final SelenideElement blankHolderField = $(byText("Поле обязательно для заполнения")).parent().$(".input__sub"); //  полe владедец должно быть заполнено
-    private final SelenideElement incorrectCvcFormat = $(byText("Неверный формат")).parent().$(".input__sub"); // неверный формат поля cvc
+
 
     public BuyCreditPage() {
         paymentOnCredit.shouldBe(Condition.visible);
@@ -51,7 +46,6 @@ public class BuyCreditPage {
     public void messageSuccessfulOperation() {
         messageAboutSending.getText();
         successfulOperation.shouldBe(visible, Duration.ofSeconds(15)); // сообщение об успешной операции
-
     }
 
     public void messageRefusalTheOperation() {
@@ -59,39 +53,22 @@ public class BuyCreditPage {
         refusalTheOperation.shouldBe(visible, Duration.ofSeconds(15)); // сообщение об отказе в операции
     }
 
-    public void messageIncorrectCardFormat() {
-        incorrectCardFormat.shouldBe(Condition.visible); // сообщение о не верном формате поля карта
+    public void messageIncorrectFormat() {
+        incorrectCard.shouldBe(visible); // сообщение о не верном формате поля
     }
 
-    public void messageIncorrectMonthFormat() {
-        incorrectMonthFormat.shouldBe(Condition.visible); // сообщение о не верном формате поля месяц
+
+    public void messageNonExistent() {
+        nonExistent.shouldBe(visible); // сообщение о несуществующем месяце либо годе
     }
 
-    public void messageNonExistentMonth() {
-        nonExistentMonth.shouldBe(Condition.visible); // сообщение о несуществующем месяце
+
+    public void messageDateSpecifiedLessThanCurrentOne() {
+        lessThanThis.shouldBe(visible); // сообщение, что дата указана меньше, чем текущая
     }
 
-    public void messageIncorrectYearFormat() {
-        incorrectYearFormat.shouldBe(Condition.visible); // сообщение о не верном формате поля год
-    }
-
-    public void messageLessThanThisYear() {
-        lessThanThisYear.shouldBe(Condition.visible); // сообщение, что год указан меньше, чем текущий год
-    }
-
-    public void messageFiveYearsMoreThanCurrentYear() {
-        fiveYearsMoreThanCurrentYear.shouldBe(Condition.visible); // сообщение, что год указан больше на пять лет, чем текущий год
-    }
-
-    public void messageIncorrectHolderFormat() {
-        incorrectHolderFormat.shouldBe(Condition.visible); // сообщение о не верном формате поля владелец
-    }
 
     public void messageBlankHolderField() {
         blankHolderField.shouldBe(visible); // сообщение о том, что поля владелец должно быть заполнено
-    }
-
-    public void messageIncorrectCvcFormat() {
-        incorrectCvcFormat.shouldBe(Condition.visible); // сообщение о не верном формате поля Cvc
     }
 }

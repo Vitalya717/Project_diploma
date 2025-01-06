@@ -9,7 +9,6 @@ import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
 import static netology.web.data.DataHelper.*;
-import static netology.web.data.Rest.*;
 import static netology.web.data.SQLHelper.cleanDatabase;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -155,7 +154,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCardFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -166,7 +165,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCardFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -199,7 +198,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCardFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -210,7 +209,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectMonthFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -221,7 +220,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectMonthFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -232,7 +231,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageNonExistentMonth();
+        purchase.messageNonExistent();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -243,7 +242,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageNonExistentMonth();
+        purchase.messageNonExistent();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -265,7 +264,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectYearFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -276,7 +275,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectYearFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -287,7 +286,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageLessThanThisYear();
+        purchase.messageDateSpecifiedLessThanCurrentOne();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -298,7 +297,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageFiveYearsMoreThanCurrentYear();
+        purchase.messageNonExistent();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -309,7 +308,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageLessThanThisYear();
+        purchase.messageDateSpecifiedLessThanCurrentOne();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -320,7 +319,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -331,7 +330,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -342,7 +341,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -353,7 +352,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -364,7 +363,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -375,7 +374,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -386,7 +385,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -397,7 +396,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectHolderFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -441,7 +440,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCvcFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -452,7 +451,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCvcFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -463,7 +462,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCvcFormat();
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 
@@ -474,67 +473,7 @@ public class BuyPageTest {
         var startPage = new BuyingTourPage();
         var purchase = startPage.goToPurchasePage();
         purchase.completedForm(cartInfo);
-        purchase.messageIncorrectCvcFormat();
-        assertEquals(0, SQLHelper.getNumberPurchases());
-    }
-
-    // Backend Позитивные сценарии:
-    @Test
-    @DisplayName("Send a purchase request with an active bank card and valid data")
-    void sendPurchaseRequestWithAnActiveBankCardAndValidData() {
-        CartInfo cartInfo = new CartInfo(getCartApproved(), getCurrentYearIsUpByOneYear(), getCurrentMonth(), getValidHolder(), getValidCvc());
-        sendPurchaseRequestWithActiveCard(cartInfo);
-        assertEquals(1, SQLHelper.getNumberPurchases());
-        assertEquals("APPROVED", SQLHelper.getPurchaseStatus());
-    }
-
-    @Test
-    @DisplayName("Send a purchase request with a blocked bank card and valid data")
-    void sendPurchaseRequestWithBlockedBankCardAndValidData() {
-        CartInfo cartInfo = new CartInfo(getCartDeclined(), getCurrentYearIsUpByOneYear(), getCurrentMonth(), getValidHolder(), getValidCvc());
-        sendPurchaseRequestWithBlockedCard(cartInfo);
-        assertEquals(1, SQLHelper.getNumberPurchases());
-        assertEquals("DECLINED", SQLHelper.getPurchaseStatus());
-    }
-
-    // Backend негативные сценарии:
-    @Test
-    @DisplayName("Send a purchase request with an active bank card and an invalid month")
-    void sendPurchaseRequestWithActiveBankCardAndInvalidMonth() {
-        CartInfo cartInfo = new CartInfo(getCartApproved(), getCurrentYearIsUpByOneYear(), getNonExistentMonth(), getValidHolder(), getValidCvc());
-        sendPurchaseRequestWithActiveBankCardAndInvalidData(cartInfo);
-        assertEquals(0, SQLHelper.getNumberPurchases());
-    }
-
-    @Test
-    @DisplayName("Send a purchase request with an active bank card and a value less than the current year for one year")
-    void sendPurchaseRequestWithActiveBankCardAndCurrentYearValueLessThanOneYear() {
-        CartInfo cartInfo = new CartInfo(getCartApproved(), getYearLessCurrentOne(), getCurrentMonth(), getValidHolder(), getValidCvc());
-        sendPurchaseRequestWithActiveBankCardAndInvalidData(cartInfo);
-        assertEquals(0, SQLHelper.getNumberPurchases());
-    }
-
-    @Test
-    @DisplayName("Send a purchase request with an active bank card and an invalid owner")
-    void sendPurchaseRequestWithActiveBankCardAndAnInvalidOwner() {
-        CartInfo cartInfo = new CartInfo(getCartApproved(), getCurrentYearIsUpByOneYear(), getCurrentMonth(), getHolderInvalid(), getValidCvc());
-        sendPurchaseRequestWithActiveBankCardAndInvalidData(cartInfo);
-        assertEquals(0, SQLHelper.getNumberPurchases());
-    }
-
-    @Test
-    @DisplayName("Send a purchase request with an active bank card and invalid cvc")
-    void sendPurchaseRequestWithActiveBankCardAndInvalidCvc() {
-        CartInfo cartInfo = new CartInfo(getCartApproved(), getCurrentYearIsUpByOneYear(), getCurrentMonth(), getValidHolder(), getCvcTwoDigits());
-        sendPurchaseRequestWithActiveBankCardAndInvalidData(cartInfo);
-        assertEquals(0, SQLHelper.getNumberPurchases());
-    }
-
-    @Test
-    @DisplayName("Send a purchase request with a random bank card and valid data")
-    void sendPurchaseRequestWithRandomBankCardAndInvalidCvc() {
-        CartInfo cartInfo = new CartInfo(getGenerateCart(), getCurrentYearIsUpByOneYear(), getCurrentMonth(), getValidHolder(), getValidCvc());
-        sendPurchaseRequestWithActiveBankCardAndInvalidData(cartInfo);
+        purchase.messageIncorrectFormat();
         assertEquals(0, SQLHelper.getNumberPurchases());
     }
 

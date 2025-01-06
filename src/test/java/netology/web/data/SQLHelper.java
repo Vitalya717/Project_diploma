@@ -50,6 +50,7 @@ public class SQLHelper {
         var code = QUERY_RUNNER.query(conn, codeSQL, new ScalarHandler<Long>());
         return code;
     }
+
     @SneakyThrows
     public static Long getNumberPurchases() { // получить количество покупок
         var codeSQL = "SELECT COUNT(*) FROM payment_entity";
